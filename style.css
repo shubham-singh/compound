@@ -7,7 +7,7 @@
 body {
     font-family: 'Kalam', cursive;
     margin: 0;
-    background-color: #EFF6FF;
+    background-color: #F3F4F6;
 }
 
 .center {
@@ -44,7 +44,7 @@ table {
 }
 
 tr {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
 }
 
 th {
