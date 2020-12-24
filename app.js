@@ -7,25 +7,20 @@ function compound() {
     let principal = parseFloat(document.getElementById('principal').value);
     let interest = parseFloat(document.getElementById('interest').value);
     let years = parseInt((document.getElementById('years')).value);
-    // if(isNaN(principal) || isNaN(interest) || isNaN(years))
-    // if(principal === NaN || interest === NaN || years === NaN)
-    // {
-    //     console.log('lol');
-    //     return;
-    // }
+ 
+    
+    if(isNaN(principal) || isNaN(interest) || isNaN(years))
+    {
+        return;
+    }
     const table = document.createElement('table');
-    let header = table.createTHead();
-    let row = table.insertRow(0);
-    let head1 = row.insertCell(0);
-    let head2 = row.insertCell(1);
-    let head3 = row.insertCell(2);
-    head1.innerHTML = "Year";
-    head2.innerHTML = "Amount";
-    head3.innerHTML = "Interest Earned";
+    let thead = table.createTHead();
+    let tbody = table.createTBody();
+    thead.innerHTML = "<tr><th>Year</th><th>Amount</th><th>Interest</th></tr>"
     
     for (let i = 0, n = years; i <= n; i++)
     {
-        let row = table.insertRow(i+1);
+        let row = tbody.insertRow(i);
         let cell1 = row.insertCell(0);
         let cell2 = row.insertCell(1);
         let cell3 = row.insertCell(2);
@@ -34,7 +29,6 @@ function compound() {
         cell3.innerHTML = ((principal / 100) * interest).toFixed(2) ;
         principal += (principal / 100) * interest;
     }
-    console.log(table);
     document.body.appendChild(table);
 }
 
