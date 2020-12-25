@@ -6,16 +6,18 @@ function compound() {
 
     let principal = parseFloat(document.getElementById('principal').value);
     let interest = parseFloat(document.getElementById('interest').value);
-    let years = parseInt((document.getElementById('years')).value);
- 
+    let years = parseInt((document.getElementById('years')).value); 
     
     if(isNaN(principal) || isNaN(interest) || isNaN(years))
     {
         return;
     }
+
     const table = document.createElement('table');
+    
     let thead = table.createTHead();
     let tbody = table.createTBody();
+    
     thead.innerHTML = "<tr><th>Year</th><th>Amount</th><th>Interest</th></tr>"
     
     for (let i = 0, n = years; i <= n; i++)

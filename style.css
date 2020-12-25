@@ -8,6 +8,7 @@ body {
     font-family: 'Kalam', cursive;
     margin: 0;
     background-color: #F3F4F6;
+    /* background-color: black; */
 }
 
 .center {
@@ -38,7 +39,6 @@ button {
 }
 
 table {
-    /* border-collapse: collapse; */
     margin: 3rem auto;
     width: 600px;
 }
@@ -56,11 +56,9 @@ tr:nth-child(odd) {
     color: var(--color);
 }
 
-
 td {
     text-align: center;
     padding: 0.7rem;
-    /* border: 1px solid black; */
 }
 
 @media (max-width: 700px) {
