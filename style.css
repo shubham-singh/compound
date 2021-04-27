@@ -40,6 +40,10 @@ button {
     outline: none;
 }
 
+button:focus, input:focus, button:hover, input:hover {
+    filter: brightness(90%);
+}
+
 table {
     margin: 3rem auto;
     width: 600px;
