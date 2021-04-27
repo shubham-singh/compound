@@ -27,8 +27,8 @@ function compound() {
         let cell2 = row.insertCell(1);
         let cell3 = row.insertCell(2);
         cell1.innerHTML = i;
-        cell2.innerHTML = principal.toFixed(2);
-        cell3.innerHTML = ((principal / 100) * interest).toFixed(2) ;
+        cell2.innerHTML = principal.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
+        cell3.innerHTML = ((principal / 100) * interest).toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
         principal += (principal / 100) * interest;
     }
     document.body.appendChild(table);
