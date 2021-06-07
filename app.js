@@ -23,7 +23,7 @@ function calculateCAGR(event, cagrForm) {
 
     let CAGR = document.createElement('h2');
 
-    CAGR.innerHTML = `CAGR: ${interest} %`;
+    CAGR.innerHTML = `CAGR: ${interest.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})} %`;
 
     document.body.appendChild(CAGR);
 
