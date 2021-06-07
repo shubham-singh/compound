@@ -20,6 +20,10 @@ h1 {
     color: var(--color);
 }
 
+h2 {
+    text-align: center;
+}
+
 input {
     margin: 1rem;
     text-align: center;

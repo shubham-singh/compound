@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <script src="app.js"></script>
     <title>compound</title>
@@ -14,10 +15,21 @@
         <h1 class="center">Wonders of compounding</h1>
     </nav>
     <div class="center">
-        <input type="number" id="principal" placeholder="principal" autofocus>
-        <input type="number" id="interest" placeholder="interest %">
-        <input type="number" id="years" placeholder="years">
-        <button id="submit" type="submit">Calculate</button>
+        <form id="interest-form">
+            <input type="number" id="principal" placeholder="principal">
+            <input type="number" id="interest" placeholder="interest %">
+            <input type="number" id="years" placeholder="years">
+            <button id="submit" type="submit">Calculate</button>
+        </form>
+
+        <h3>Or</h3>
+        
+        <form id="cagr-form">
+            <input type="number" id="principal" placeholder="principal">
+            <input type="number" id="final" placeholder="final amount">
+            <input type="number" id="years" placeholder="years">
+            <button id="submit" type="submit">CAGR</button>
+        </form>
     </div>
 </body>
 
