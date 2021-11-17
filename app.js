@@ -2,14 +2,15 @@ document.addEventListener('DOMContentLoaded', () => {
     let btn = document.getElementById('submit');
     let interestForm = document.getElementById('interest-form');
     let cagrForm = document.getElementById('cagr-form');
-    interestForm.addEventListener('submit', () => calculateInterest(event ,interestForm));
-    cagrForm.addEventListener('submit', () => calculateCAGR(event ,cagrForm));
+    interestForm.addEventListener('submit', (event) => calculateInterest(event ,interestForm, cagrForm));
+    cagrForm.addEventListener('submit', (event) => calculateCAGR(event ,cagrForm, interestForm));
 });
 
-function calculateCAGR(event, cagrForm) {
+function calculateCAGR(event, cagrForm, interestForm) {
 
     event.preventDefault();
     clear();
+    clearForm(interestForm)
 
     let principal = parseFloat(cagrForm[0].value);
     let final = parseFloat(cagrForm[1].value);
@@ -31,10 +32,11 @@ function calculateCAGR(event, cagrForm) {
 
 }
 
-function calculateInterest(event, interestForm) {
+function calculateInterest(event, interestForm, cagrForm) {
 
     event.preventDefault();
     clear();
+    clearForm(cagrForm);
 
     let principal = parseFloat(interestForm[0].value);
     let interest = parseFloat(interestForm[1].value);
@@ -85,5 +87,13 @@ function clear() {
     if (document.querySelector('h2') !== null)
     {
         document.querySelector('h2').remove();
+    }
+}
+
+function clearForm(HTMLForm) {
+    for (let element of HTMLForm) {
+        if (element.type === "number") {
+            element.value = ""
+        }
     }
 }
