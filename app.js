@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const id = event.target.id
             const value = event.target.value
             urlSearchParams.set(elementToQueryParamMap[id], value)
-            history.replaceState('', '', `${document.location.origin}?${urlSearchParams.toString()}`)
+            history.replaceState('', '', `${document.location.origin}${document.location.pathname}?${urlSearchParams.toString()}`)
         })
     }
     interestForm.addEventListener('submit', (event) => calculateInterest(event, interestForm, cagrForm, urlSearchParams));
@@ -120,7 +120,7 @@ function clearForm(HTMLForm, searchParams, idPrefix) {
             element.value = ""
         }
     }
-    history.replaceState('', '', `${document.location.origin}?${searchParams.toString()}`)
+    history.replaceState('', '', `${document.location.origin}${document.location.pathname}?${searchParams.toString()}`)
 }
 
 function autofill(queryParams) {
